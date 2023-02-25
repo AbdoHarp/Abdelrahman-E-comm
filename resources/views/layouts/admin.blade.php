@@ -71,7 +71,11 @@
     <script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
     <!-- End custom js for this page-->
     @yield('scripts')
-
+    @if (session('message'))
+        <script>
+            swal("{{ session('message') }}");
+        </script>
+    @endif
     @livewireScripts
     @stack('script')
 </body>
